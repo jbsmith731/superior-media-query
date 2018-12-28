@@ -1,1 +1,3 @@
 .editorconfig
+tests
+tests/**
