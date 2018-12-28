@@ -1,16 +1,14 @@
 const stripUnit = val => ({
-  value: val.match(/[0-9]*/)[0],
+  value: val.match(/[0-9.]*/)[0],
   unit: val.match(/[a-z|A-Z|%]+/)[0],
 });
 
 const below = (size, styles) => {
   const { value, unit } = stripUnit(size);
 
-  return `
-    @media screen and (max-width: ${value - 1}${unit}) {
-      ${styles}
-    }
-  `;
+  return `@media screen and (max-width: ${value - 1}${unit}) {
+    ${styles}
+  }`;
 };
 
 const above = (size, styles) => `
@@ -22,11 +20,9 @@ const above = (size, styles) => `
 const between = (minSize, maxSize, styles) => {
   const { value, unit } = stripUnit(maxSize);
 
-  return `
-    @media screen and (min-width: ${minSize}) and (max - width: ${value - 1}${unit}) {
-      ${styles}
-    }
-  `;
+  return `@media screen and (min-width: ${minSize}) and (max-width: ${value - 1}${unit}) {
+    ${styles}
+  }`;
 };
 
 const screen = {
@@ -35,4 +31,4 @@ const screen = {
   above,
 };
 
-export default screen;
+module.exports = screen;
