@@ -1,4 +1,3 @@
-// test for commit
 const stripUnit = val => ({
   value: val.match(/[0-9]*/)[0],
   unit: val.match(/[a-z|A-Z|%]+/)[0],
