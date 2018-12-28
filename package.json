@@ -1,5 +1,5 @@
 {
-  "name": "@superior/media-query",
+  "name": "@superior/mq",
   "version": "0.1.0",
   "description": "css in js media query functions",
   "main": "src/index.js",
