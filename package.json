@@ -29,6 +29,13 @@
     "vue",
     "responsive"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbsmith731/superior-media-query"
+  },
+  "bugs": {
+    "url": "https://github.com/jbsmith731/superior-media-query/issues"
+  },
   "devDependencies": {
     "@ueno/eslint-config": "^1.2.8",
     "eslint": "4.9.0",
