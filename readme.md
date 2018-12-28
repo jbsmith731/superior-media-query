@@ -1,9 +1,9 @@
-# @superior/mq
+# superior-mq
 css-in-js media queries
 
 #### `screen.below` Input:
 ```js
-@import screen from '@superior/mq'
+@import screen from 'superior-mq'
 
 screen.below('480px', `
   font-size: 1rem;
@@ -19,7 +19,7 @@ screen.below('480px', `
 ---
 #### `screen.above` Input:
 ```js
-@import screen from '@superior/mq'
+@import screen from 'superior-mq'
 
 screen.above('480px', `
   font-size: 1rem;
@@ -35,7 +35,7 @@ screen.above('480px', `
 ---
 #### `screen.between` Input:
 ```js
-@import screen from '@superior/mq'
+@import screen from 'superior-mq'
 
 screen.between('600px', '800px' `
   font-size: 1rem;
