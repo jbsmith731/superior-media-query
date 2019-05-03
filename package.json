@@ -16,7 +16,7 @@
     "*.js": [
       "eslint --fix",
       "git add",
-      "jest"
+      "jest --bail --findRelatedTests"
     ]
   },
   "author": "Brett Smith",
