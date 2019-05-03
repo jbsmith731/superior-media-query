@@ -1,7 +1,17 @@
-const stripUnit = val => ({
-  value: val.match(/[0-9.]*/)[0],
-  unit: val.match(/[a-z|A-Z|%]+/)[0],
-});
+const stripUnit = (val) => {
+  if (!val) throw new Error('No value was provided to superior-mq screen size');
+
+  const strVal = val.toString();
+  const value = strVal.match(/[0-9.]*/)[0];
+  const unit = strVal.match(/[a-z|A-Z|%]+/);
+
+  if (!unit) throw new Error('No unit was provided to superior-mq screen size');
+
+  return {
+    value,
+    unit: unit[0],
+  };
+};
 
 const below = (size, styles) => {
   const { value, unit } = stripUnit(size);
