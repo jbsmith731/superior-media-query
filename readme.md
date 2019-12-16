@@ -61,7 +61,7 @@ screen.belowHeight('480px', `
 #### `screen.belowHeight` Output:
 ```css
 @media screen and (max-height: 479px) {
-  font-size: 12px;
+  font-size: 1rem;
 }
 ```
 ---
