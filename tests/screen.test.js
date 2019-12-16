@@ -32,3 +32,36 @@ const betweenResult = `
 test('Screen between', () => {
   expect(betweenTest).toBe(betweenResult);
 });
+
+const belowHeightTest = screen.belowHeight('600px', 'font-size: 12px;').trim();
+const belowHeightResult = `
+  @media screen and (max-height: 599px) {
+    font-size: 12px;
+  }
+`.trim();
+
+test('Screen belowHeight', () => {
+  expect(belowHeightTest).toBe(belowHeightResult);
+});
+
+const aboveHeightTest = screen.aboveHeight('600px', 'font-size: 16px;').trim();
+const aboveHeightResult = `
+  @media screen and (min-height: 600px) {
+    font-size: 16px;
+  }
+`.trim();
+
+test('Screen aboveHeight', () => {
+  expect(aboveHeightTest).toBe(aboveHeightResult);
+});
+
+const betweenHeightTest = screen.betweenHeight('600px', '800px', 'font-size: 14px;').trim();
+const betweenHeightResult = `
+  @media screen and (min-height: 600px) and (max-height: 799px) {
+    font-size: 14px;
+  }
+`.trim();
+
+test('Screen betweenHeight', () => {
+  expect(betweenHeightTest).toBe(betweenHeightResult);
+});

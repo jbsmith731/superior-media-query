@@ -35,10 +35,35 @@ const between = (minSize, maxSize, styles) => {
   }`;
 };
 
+const belowHeight = (size, styles) => {
+  const { value, unit } = stripUnit(size);
+
+  return `@media screen and (max-height: ${value - 1}${unit}) {
+    ${styles}
+  }`;
+};
+
+const aboveHeight = (size, styles) => `
+  @media screen and (min-height: ${size}) {
+    ${styles}
+  }
+`;
+
+const betweenHeight = (minSize, maxSize, styles) => {
+  const { value, unit } = stripUnit(maxSize);
+
+  return `@media screen and (min-height: ${minSize}) and (max-height: ${value - 1}${unit}) {
+    ${styles}
+  }`;
+};
+
 const screen = {
   below,
   between,
   above,
+  belowHeight,
+  betweenHeight,
+  aboveHeight,
 };
 
 module.exports = screen;

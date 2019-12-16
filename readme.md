@@ -28,7 +28,7 @@ screen.above('480px', `
 
 #### `screen.above` Output:
 ```css
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   font-size: 12px;
 }
 ```
@@ -45,6 +45,54 @@ screen.between('600px', '800px' `
 #### `screen.between` Output:
 ```css
 @media screen and (min-width: 600px) and (max-width: 799px) {
+  font-size: 1rem;
+}
+```
+---
+#### `screen.belowHeight` Input:
+```js
+@import screen from 'superior-mq'
+
+screen.belowHeight('480px', `
+  font-size: 1rem;
+`)
+```
+
+#### `screen.belowHeight` Output:
+```css
+@media screen and (max-height: 479px) {
+  font-size: 1rem;
+}
+```
+---
+#### `screen.aboveHeight` Input:
+```js
+@import screen from 'superior-mq'
+
+screen.aboveHeight('480px', `
+  font-size: 1rem;
+`)
+```
+
+#### `screen.aboveHeight` Output:
+```css
+@media screen and (min-height: 480px) {
+  font-size: 12px;
+}
+```
+---
+#### `screen.betweenHeight` Input:
+```js
+@import screen from 'superior-mq'
+
+screen.betweenHeight('600px', '800px' `
+  font-size: 1rem;
+`)
+```
+
+#### `screen.betweenHeight` Output:
+```css
+@media screen and (min-height: 600px) and (max-height: 799px) {
   font-size: 1rem;
 }
 ```
