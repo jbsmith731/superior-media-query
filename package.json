@@ -1,13 +1,15 @@
 {
   "name": "superior-mq",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "css in js media query functions",
-  "main": "src/index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "lint": "eslint .",
+    "bundle": "rollup -c",
     "lint:fix": "eslint . --fix",
     "lint-staged": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "preexport": "yarn test && yarn bundle"
   },
   "pre-commit": [
     "lint-staged"
@@ -37,10 +39,18 @@
     "url": "https://github.com/jbsmith731/superior-media-query/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "@ueno/eslint-config": "^1.2.8",
     "eslint": "4.18.2",
-    "jest": "^23.6.0",
+    "jest": "^24.9.0",
     "lint-staged": "^8.1.0",
-    "pre-commit": "^1.2.2"
-  }
+    "pre-commit": "^1.2.2",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3"
+  },
+  "eslintIgnore": [
+    "dist"
+  ]
 }
