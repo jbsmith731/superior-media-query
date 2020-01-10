@@ -1,7 +1,7 @@
-const stripUnit = (val) => {
+const stripUnit = (val: string) => {
   if (!val) throw new Error('No value was provided to superior-mq screen size');
 
-  const strVal = val.toString();
+  const strVal: any = val.toString();
   const value = strVal.match(/[0-9.]*/)[0];
   const unit = strVal.match(/[a-z|A-Z|%]+/);
 
@@ -13,7 +13,7 @@ const stripUnit = (val) => {
   };
 };
 
-const below = (size, styles) => {
+const below = (size: string, styles: string) => {
   const { value, unit } = stripUnit(size);
 
   return `@media screen and (max-width: ${value - 1}${unit}) {
@@ -21,13 +21,13 @@ const below = (size, styles) => {
   }`;
 };
 
-const above = (size, styles) => `
+const above = (size: string, styles: string) => `
   @media screen and (min-width: ${size}) {
     ${styles}
   }
 `;
 
-const between = (minSize, maxSize, styles) => {
+const between = (minSize: string, maxSize: string, styles: string) => {
   const { value, unit } = stripUnit(maxSize);
 
   return `@media screen and (min-width: ${minSize}) and (max-width: ${value - 1}${unit}) {
@@ -35,7 +35,7 @@ const between = (minSize, maxSize, styles) => {
   }`;
 };
 
-const belowHeight = (size, styles) => {
+const belowHeight = (size: string, styles: string) => {
   const { value, unit } = stripUnit(size);
 
   return `@media screen and (max-height: ${value - 1}${unit}) {
@@ -43,13 +43,13 @@ const belowHeight = (size, styles) => {
   }`;
 };
 
-const aboveHeight = (size, styles) => `
+const aboveHeight = (size: string, styles: string) => `
   @media screen and (min-height: ${size}) {
     ${styles}
   }
 `;
 
-const betweenHeight = (minSize, maxSize, styles) => {
+const betweenHeight = (minSize: string, maxSize: string, styles: string) => {
   const { value, unit } = stripUnit(maxSize);
 
   return `@media screen and (min-height: ${minSize}) and (max-height: ${value - 1}${unit}) {
@@ -66,4 +66,4 @@ const screen = {
   aboveHeight,
 };
 
-module.exports = screen;
+export default screen;

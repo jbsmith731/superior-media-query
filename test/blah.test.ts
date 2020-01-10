@@ -1,4 +1,4 @@
-const screen = require('../src/index');
+import screen from '../src';
 
 const belowTest = screen.below('600px', 'font-size: 12px;').trim();
 const belowResult = `

@@ -1,7 +1,0 @@
-.editorconfig
-tests
-tests/**
-src
-rollup.config.js
-.eslintrc
-.babelrc

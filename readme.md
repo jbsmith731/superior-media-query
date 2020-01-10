@@ -1,114 +1,27 @@
-# superior-mq
-css-in-js media queries
+# TSDX Bootstrap
 
-#### `screen.below` Input:
-```js
-@import screen from 'superior-mq'
+This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
 
-screen.below('480px', `
-  font-size: 1rem;
-`)
-```
+## Local Development
 
-#### `screen.below` Output:
-```css
-@media screen and (max-width: 479px) {
-  font-size: 12px;
-}
-```
----
-#### `screen.above` Input:
-```js
-@import screen from 'superior-mq'
+Below is a list of commands you will probably find useful.
 
-screen.above('480px', `
-  font-size: 1rem;
-`)
-```
+### `npm start` or `yarn start`
 
-#### `screen.above` Output:
-```css
-@media screen and (min-width: 480px) {
-  font-size: 12px;
-}
-```
----
-#### `screen.between` Input:
-```js
-@import screen from 'superior-mq'
+Runs the project in development/watch mode. Your project will be rebuilt upon changes. TSDX has a special logger for you convenience. Error messages are pretty printed and formatted for compatibility VS Code's Problems tab.
 
-screen.between('600px', '800px' `
-  font-size: 1rem;
-`)
-```
+<img src="https://user-images.githubusercontent.com/4060187/52168303-574d3a00-26f6-11e9-9f3b-71dbec9ebfcb.gif" width="600" />
 
-#### `screen.between` Output:
-```css
-@media screen and (min-width: 600px) and (max-width: 799px) {
-  font-size: 1rem;
-}
-```
----
-#### `screen.belowHeight` Input:
-```js
-@import screen from 'superior-mq'
+Your library will be rebuilt if you make edits.
 
-screen.belowHeight('480px', `
-  font-size: 1rem;
-`)
-```
+### `npm run build` or `yarn build`
 
-#### `screen.belowHeight` Output:
-```css
-@media screen and (max-height: 479px) {
-  font-size: 1rem;
-}
-```
----
-#### `screen.aboveHeight` Input:
-```js
-@import screen from 'superior-mq'
+Bundles the package to the `dist` folder.
+The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
 
-screen.aboveHeight('480px', `
-  font-size: 1rem;
-`)
-```
+<img src="https://user-images.githubusercontent.com/4060187/52168322-a98e5b00-26f6-11e9-8cf6-222d716b75ef.gif" width="600" />
 
-#### `screen.aboveHeight` Output:
-```css
-@media screen and (min-height: 480px) {
-  font-size: 12px;
-}
-```
----
-#### `screen.betweenHeight` Input:
-```js
-@import screen from 'superior-mq'
+### `npm test` or `yarn test`
 
-screen.betweenHeight('600px', '800px' `
-  font-size: 1rem;
-`)
-```
-
-#### `screen.betweenHeight` Output:
-```css
-@media screen and (min-height: 600px) and (max-height: 799px) {
-  font-size: 1rem;
-}
-```
----
-### With styled-components
-```js
-import styled from 'styled-components';
-import screen from '@superior-media-query';
-
-const PageHeading = styled.h1`
-  font-size: 1.75rem;
-  margin-bottom: .25rem;
-
-  ${screenAbove('480px', `
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  `)}
-`;
-```
+Runs the test watcher (Jest) in an interactive mode.
+By default, runs tests related to files changed since the last commit.
